@@ -1,58 +1,14 @@
-/* ============================================================
-   MEDICAL LUZ — Spa & Wellness · Córdoba
-   styles.css — Versión limpia y comentada
-   ============================================================
-
-   ÍNDICE
-   1.  Variables & Reset
-   2.  Base / Body
-   3.  Navegación (desktop)
-   4.  Navegación mobile (menú hamburguesa)
-   5.  Páginas & Animaciones
-   6.  Botones
-   7.  Utilidades (labels, títulos)
-   8.  Hero principal
-   9.  Hero — Slideshow
-   10. Ticker
-   11. Sección Servicios (home)
-   12. Sección About
-   13. Gift Teaser
-   14. Newsletter
-   15. Footer
-   16. WhatsApp flotante
-   17. Hero interior (páginas internas)
-   18. Página Servicios
-   19. Gift Cards
-   20. Modal Gift Card
-   21. Reservas (formulario)
-   22. Contacto
-   23. Stripe CTA
-   24. Animaciones de entrada
-   25. Responsive — Tablet (≤1100px)
-   26. Responsive — Mobile (≤768px)
-   ============================================================ */
-
-
-/* ============================================================
-   1. VARIABLES & RESET
-   ============================================================ */
-
 :root {
-  /* Colores */
-  --white:      #fdfeff;
-  --brown:      #4b4230;            /* fondo ticker y stripe */
-  --dark:       #2c3243;            /* fondo secciones secundarias */
-  --dark-deep:  #1a1f2e;            /* fondo principal */
-  --gold:       #c9a96e;            /* acento dorado */
-  --gold-light: #e8d5b0;            /* dorado claro (hover) */
-  --muted:      rgba(253,254,255,0.48); /* texto secundario */
-
-  /* Tipografías */
-  --fd: 'Cormorant Garamond', serif; /* display / titulares */
-  --fb: 'Jost', sans-serif;          /* body / UI */
-  --fl: 'Cinzel', serif;             /* labels / botones */
-
-  /* Transición global */
+  --white: #fdfeff;
+  --brown: #4b4230;
+  --dark: #2c3243;
+  --dark-deep: #1a1f2e;
+  --gold: #c9a96e;
+  --gold-light: #e8d5b0;
+  --muted: rgba(253, 254, 255, 0.48);
+  --fd: 'Cormorant Garamond', serif;
+  --fb: 'Jost', sans-serif;
+  --fl: 'Cinzel', serif;
   --ease: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -74,11 +30,6 @@ html {
   scroll-behavior: smooth;
 }
 
-
-/* ============================================================
-   2. BASE / BODY
-   ============================================================ */
-
 body {
   background: var(--dark-deep);
   color: var(--white);
@@ -89,7 +40,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Textura de ruido sutil sobre toda la página */
 body::after {
   content: '';
   position: fixed;
@@ -99,11 +49,7 @@ body::after {
   z-index: 9999;
 }
 
-
-/* ============================================================
-   3. NAVEGACIÓN (DESKTOP)
-   ============================================================ */
-
+/* NAV */
 nav {
   position: fixed;
   top: 0;
@@ -117,48 +63,44 @@ nav {
   transition: var(--ease);
 }
 
-/* Nav con fondo al hacer scroll */
 nav.scrolled {
-  background: rgba(26,31,46,0.95);
+  background: rgba(26, 31, 46, 0.95);
   backdrop-filter: blur(24px);
-  padding: 16px 40px;
-  border-bottom: 1px solid rgba(201,169,110,0.14);
+  padding: 16px 56px;
+  border-bottom: 1px solid rgba(201, 169, 110, 0.14);
 }
 
-/* Logo */
 .nav-logo {
   cursor: pointer;
-  flex-shrink: 0; /* evita que el logo se comprima */
 }
 
 .nl-name {
   font-family: var(--fl);
-  font-size: 20px;          /* reducido para evitar superposición */
-  letter-spacing: 3px;
+  font-size: 24px;
+  letter-spacing: 4px;
   color: var(--white);
   display: block;
 }
 
 .nl-sub {
   font-family: var(--fb);
-  font-size: 12px;          /* reducido para evitar superposición */
-  letter-spacing: 3px;
+  font-size: 15px;
+  letter-spacing: 4px;
   color: var(--gold);
   text-transform: uppercase;
   display: block;
   margin-top: 3px;
 }
 
-/* Links de navegación */
 .nav-links {
   display: flex;
-  gap: 28px;               /* reducido para evitar superposición */
+  gap: 44px;
   list-style: none;
 }
 
 .nav-links a {
-  font-size: 15px;          /* reducido para evitar superposición */
-  letter-spacing: 2px;
+  font-size: 18px;
+  letter-spacing: 3px;
   text-transform: uppercase;
   color: var(--muted);
   text-decoration: none;
@@ -167,7 +109,6 @@ nav.scrolled {
   position: relative;
 }
 
-/* Línea dorada bajo el link activo / hover */
 .nav-links a::after {
   content: '';
   position: absolute;
@@ -189,18 +130,16 @@ nav.scrolled {
   width: 100%;
 }
 
-/* Botón CTA del nav */
 .nav-btn {
-  font-family: var(--fl);
-  font-size: 14px;          /* reducido para evitar superposición */
+  font-size: 17px;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--dark-deep);
   background: var(--gold);
   padding: 13px 24px;
-  border: none;
   cursor: pointer;
-  flex-shrink: 0;
+  border: none;
+  font-family: var(--fl);
   transition: var(--ease);
 }
 
@@ -208,7 +147,6 @@ nav.scrolled {
   background: var(--gold-light);
 }
 
-/* Ícono hamburguesa (solo mobile) */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -224,11 +162,7 @@ nav.scrolled {
   transition: var(--ease);
 }
 
-
-/* ============================================================
-   4. NAVEGACIÓN MOBILE (MENÚ HAMBURGUESA)
-   ============================================================ */
-
+/* MOBILE NAV */
 .mob-nav {
   display: none;
   position: fixed;
@@ -271,11 +205,7 @@ nav.scrolled {
   cursor: pointer;
 }
 
-
-/* ============================================================
-   5. PÁGINAS & ANIMACIONES DE PÁGINA
-   ============================================================ */
-
+/* PAGES */
 .page {
   display: none;
   min-height: 100vh;
@@ -283,20 +213,22 @@ nav.scrolled {
 
 .page.active {
   display: block;
-  animation: pgIn .55s cubic-bezier(.16,1,.3,1) both;
+  animation: pgIn .55s cubic-bezier(.16, 1, .3, 1) both;
 }
 
 @keyframes pgIn {
-  from { opacity: 0; transform: translateY(18px); }
-  to   { opacity: 1; transform: none; }
+  from {
+    opacity: 0;
+    transform: translateY(18px)
+  }
+
+  to {
+    opacity: 1;
+    transform: none
+  }
 }
 
-
-/* ============================================================
-   6. BOTONES
-   ============================================================ */
-
-/* Botón primario (dorado sólido) */
+/* BUTTONS */
 .btn-p {
   font-family: var(--fl);
   font-size: 18px;
@@ -317,7 +249,6 @@ nav.scrolled {
   transform: translateY(-2px);
 }
 
-/* Botón secundario (borde translúcido) */
 .btn-g {
   font-family: var(--fl);
   font-size: 18px;
@@ -326,7 +257,7 @@ nav.scrolled {
   color: var(--white);
   background: transparent;
   padding: 19px 44px;
-  border: 1px solid rgba(253,254,255,.22);
+  border: 1px solid rgba(253, 254, 255, .22);
   cursor: pointer;
   text-decoration: none;
   display: inline-block;
@@ -338,12 +269,7 @@ nav.scrolled {
   color: var(--gold);
 }
 
-
-/* ============================================================
-   7. UTILIDADES (labels, títulos de sección)
-   ============================================================ */
-
-/* Label pequeño sobre el título */
+/* UTILS */
 .s-label {
   font-family: var(--fl);
   font-size: 18px;
@@ -353,7 +279,6 @@ nav.scrolled {
   margin-bottom: 18px;
 }
 
-/* Título principal de sección */
 .s-title {
   font-family: var(--fd);
   font-size: clamp(52px, 5.5vw, 86px);
@@ -367,21 +292,15 @@ nav.scrolled {
   color: var(--gold);
 }
 
-
-/* ============================================================
-   8. HERO PRINCIPAL
-   ============================================================ */
-
+/* HERO */
 .hero {
   height: 100vh;
-  max-height: 100vh;        /* evita que se desborde en mobile */
   position: relative;
   display: grid;
   grid-template-columns: 52% 48%;
   overflow: hidden;
 }
 
-/* Columna izquierda: contenido de texto */
 .hero-l {
   display: flex;
   flex-direction: column;
@@ -391,7 +310,6 @@ nav.scrolled {
   z-index: 2;
 }
 
-/* Label superior del hero */
 .hero-lbl {
   font-family: var(--fl);
   font-size: 18px;
@@ -402,7 +320,6 @@ nav.scrolled {
   animation: fuD .9s .1s forwards;
 }
 
-/* Título H1 del hero */
 .hero-h1 {
   font-family: var(--fd);
   font-size: clamp(72px, 9.5vw, 148px);
@@ -419,7 +336,6 @@ nav.scrolled {
   color: var(--gold);
 }
 
-/* Párrafo descriptivo del hero */
 .hero-p {
   font-size: 25px;
   letter-spacing: .8px;
@@ -431,7 +347,6 @@ nav.scrolled {
   animation: fuD .9s .4s forwards;
 }
 
-/* Contenedor de botones CTA */
 .hero-acts {
   display: flex;
   gap: 18px;
@@ -440,7 +355,71 @@ nav.scrolled {
   animation: fuD .9s .55s forwards;
 }
 
-/* Indicador de scroll (línea animada + texto vertical) */
+/* HERO SLIDESHOW */
+.hero-r {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-r::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(to top, var(--dark-deep) 30%, rgba(26, 31, 46, .75) 65%, rgba(26, 31, 46, .45) 100%);
+}
+
+.hero-slides {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1.6s cubic-bezier(.4, 0, .2, 1);
+}
+
+.hero-slide.active {
+  opacity: 1;
+}
+
+.hero-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(.52) saturate(.72);
+  transform: scale(1.05);
+  transition: transform 7s ease-out;
+}
+
+.hero-slide.active img {
+  transform: scale(1);
+}
+
+.hero-dots {
+  position: absolute;
+  bottom: 48px;
+  right: 56px;
+  display: flex;
+  gap: 10px;
+  z-index: 3;
+}
+
+.hero-dot {
+  width: 32px;
+  height: 2px;
+  background: rgba(201, 169, 110, .28);
+  cursor: pointer;
+  transition: background .4s, width .4s;
+}
+
+.hero-dot.active {
+  background: var(--gold);
+  width: 52px;
+}
+
 .hero-scroll {
   position: absolute;
   bottom: 48px;
@@ -467,110 +446,45 @@ nav.scrolled {
   writing-mode: vertical-rl;
 }
 
-
-/* ============================================================
-   9. HERO — SLIDESHOW (columna derecha)
-   ============================================================ */
-
-/* Columna derecha: contiene el slideshow */
-.hero-r {
-  position: relative;
-  overflow: hidden;
-}
-
-/* Gradiente oscuro sobre la imagen para mezclar con el contenido */
-/* ↓ Para cambiar la intensidad del efecto, ajustá las opacidades ↓ */
-.hero-r::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  background: linear-gradient(
-    to right,
-    var(--dark-deep) 0%,
-    rgba(26,31,46,.28) 52%,
-    transparent 100%
-  );
-}
-
-.hero-slides {
-  position: absolute;
-  inset: 0;
-}
-
-.hero-slide {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  transition: opacity 1.6s cubic-bezier(.4,0,.2,1);
-}
-
-.hero-slide.active {
-  opacity: 1;
-}
-
-/* Imagen del slide — brightness y saturación de la foto */
-/* ↓ Para aclarar u oscurecer la foto, cambiá brightness(.52) ↓ */
-.hero-slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(.52) saturate(.72);
-  transform: scale(1.05);
-  transition: transform 7s ease-out;
-}
-
-.hero-slide.active img {
-  transform: scale(1);
-}
-
-/* Puntos de navegación del slideshow */
-.hero-dots {
-  position: absolute;
-  bottom: 48px;
-  right: 56px;
-  display: flex;
-  gap: 10px;
-  z-index: 3;
-}
-
-.hero-dot {
-  width: 32px;
-  height: 2px;
-  background: rgba(201,169,110,.28);
-  cursor: pointer;
-  transition: background .4s, width .4s;
-}
-
-.hero-dot.active {
-  background: var(--gold);
-  width: 52px;
-}
-
-/* Animaciones del hero */
 @keyframes sLine {
-  0%   { transform: scaleY(0); transform-origin: top; }
-  49%  { transform: scaleY(1); transform-origin: top; }
-  50%  { transform: scaleY(1); transform-origin: bottom; }
-  100% { transform: scaleY(0); transform-origin: bottom; }
+  0% {
+    transform: scaleY(0);
+    transform-origin: top
+  }
+
+  49% {
+    transform: scaleY(1);
+    transform-origin: top
+  }
+
+  50% {
+    transform: scaleY(1);
+    transform-origin: bottom
+  }
+
+  100% {
+    transform: scaleY(0);
+    transform-origin: bottom
+  }
 }
 
 @keyframes fuD {
-  from { opacity: 0; transform: translateY(36px); }
-  to   { opacity: 1; transform: none; }
+  from {
+    opacity: 0;
+    transform: translateY(36px)
+  }
+
+  to {
+    opacity: 1;
+    transform: none
+  }
 }
 
-
-/* ============================================================
-   10. TICKER (banda de texto animado)
-   ============================================================ */
-
+/* TICKER */
 .ticker {
   background: var(--brown);
   padding: 22px 0;
   overflow: hidden;
-  position: relative;
-  z-index: 1;
 }
 
 .ticker-inner {
@@ -596,15 +510,16 @@ nav.scrolled {
 }
 
 @keyframes tick {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+  from {
+    transform: translateX(0)
+  }
+
+  to {
+    transform: translateX(-50%)
+  }
 }
 
-
-/* ============================================================
-   11. SECCIÓN SERVICIOS (home — cards con imagen)
-   ============================================================ */
-
+/* SERVICES */
 .sv-section {
   background: var(--dark);
   padding: 120px 56px 0;
@@ -635,7 +550,7 @@ nav.scrolled {
   height: 100%;
   object-fit: cover;
   filter: brightness(.48) saturate(.7);
-  transition: transform .9s cubic-bezier(.16,1,.3,1), filter .9s;
+  transition: transform .9s cubic-bezier(.16, 1, .3, 1), filter .9s;
 }
 
 .sv-card:hover img {
@@ -649,7 +564,7 @@ nav.scrolled {
   left: 0;
   right: 0;
   padding: 48px 40px;
-  background: linear-gradient(to top, rgba(26,31,46,.97) 0%, transparent 100%);
+  background: linear-gradient(to top, rgba(26, 31, 46, .97) 0%, transparent 100%);
 }
 
 .sv-num {
@@ -694,11 +609,7 @@ nav.scrolled {
   opacity: 1;
 }
 
-
-/* ============================================================
-   12. SECCIÓN ABOUT (quiénes somos)
-   ============================================================ */
-
+/* ABOUT */
 .about {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -717,7 +628,6 @@ nav.scrolled {
   filter: brightness(.72) saturate(.75);
 }
 
-/* Badge flotante sobre la imagen */
 .about-badge {
   position: absolute;
   bottom: 48px;
@@ -741,19 +651,18 @@ nav.scrolled {
 
 .about-body p {
   font-size: 24px;
-  color: rgba(253,254,255,.68);
+  color: rgba(253, 254, 255, .68);
   line-height: 1.8;
   margin-bottom: 24px;
 }
 
-/* Stats numéricos (años, clientes, etc.) */
 .about-stats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 28px;
   margin-top: 52px;
   padding-top: 48px;
-  border-top: 1px solid rgba(201,169,110,.18);
+  border-top: 1px solid rgba(201, 169, 110, .18);
 }
 
 .st-n {
@@ -772,11 +681,7 @@ nav.scrolled {
   margin-top: 10px;
 }
 
-
-/* ============================================================
-   13. GIFT TEASER (sección promocional gift cards)
-   ============================================================ */
-
+/* GIFT TEASER */
 .gt-sec {
   background: var(--dark-deep);
   padding: 120px 56px;
@@ -785,7 +690,6 @@ nav.scrolled {
   overflow: hidden;
 }
 
-/* Halo dorado decorativo centrado */
 .gt-sec::before {
   content: '';
   position: absolute;
@@ -794,7 +698,7 @@ nav.scrolled {
   transform: translate(-50%, -50%);
   width: 760px;
   height: 760px;
-  background: radial-gradient(circle, rgba(201,169,110,.055) 0%, transparent 65%);
+  background: radial-gradient(circle, rgba(201, 169, 110, .055) 0%, transparent 65%);
   pointer-events: none;
 }
 
@@ -806,11 +710,7 @@ nav.scrolled {
   line-height: 1.8;
 }
 
-
-/* ============================================================
-   14. NEWSLETTER
-   ============================================================ */
-
+/* NEWSLETTER */
 .nl-sec {
   background: var(--dark);
   padding: 120px 56px;
@@ -844,8 +744,8 @@ nav.scrolled {
 
 .nl-input {
   flex: 1;
-  background: rgba(253,254,255,.04);
-  border: 1px solid rgba(201,169,110,.2);
+  background: rgba(253, 254, 255, .04);
+  border: 1px solid rgba(201, 169, 110, .2);
   border-right: none;
   padding: 20px 28px;
   color: var(--white);
@@ -861,7 +761,7 @@ nav.scrolled {
 }
 
 .nl-input::placeholder {
-  color: rgba(253,254,255,.28);
+  color: rgba(253, 254, 255, .28);
   font-size: 19px;
   letter-spacing: 1px;
 }
@@ -883,14 +783,10 @@ nav.scrolled {
   background: var(--gold-light);
 }
 
-
-/* ============================================================
-   15. FOOTER
-   ============================================================ */
-
+/* FOOTER */
 footer {
   background: var(--dark-deep);
-  border-top: 1px solid rgba(201,169,110,.12);
+  border-top: 1px solid rgba(201, 169, 110, .12);
   padding: 96px 56px 44px;
 }
 
@@ -966,11 +862,11 @@ footer {
 
 .ft-cv {
   font-size: 21px;
-  color: rgba(253,254,255,.7);
+  color: rgba(253, 254, 255, .7);
 }
 
 .ft-bot {
-  border-top: 1px solid rgba(201,169,110,.1);
+  border-top: 1px solid rgba(201, 169, 110, .1);
   padding-top: 32px;
   display: flex;
   justify-content: space-between;
@@ -981,7 +877,7 @@ footer {
 
 .ft-copy {
   font-size: 18px;
-  color: rgba(253,254,255,.28);
+  color: rgba(253, 254, 255, .28);
   letter-spacing: 1px;
 }
 
@@ -994,7 +890,7 @@ footer {
   font-family: var(--fl);
   font-size: 17px;
   letter-spacing: 3px;
-  color: rgba(253,254,255,.28);
+  color: rgba(253, 254, 255, .28);
   text-decoration: none;
   transition: color .3s;
 }
@@ -1003,11 +899,7 @@ footer {
   color: var(--gold);
 }
 
-
-/* ============================================================
-   16. WHATSAPP FLOTANTE
-   ============================================================ */
-
+/* WA FLOAT */
 .wa-wrap {
   position: fixed;
   bottom: 32px;
@@ -1021,7 +913,7 @@ footer {
 
 .wa-tip {
   background: var(--dark);
-  border: 1px solid rgba(201,169,110,.2);
+  border: 1px solid rgba(201, 169, 110, .2);
   padding: 13px 20px;
   font-size: 20px;
   color: var(--white);
@@ -1047,13 +939,13 @@ footer {
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  box-shadow: 0 6px 28px rgba(37,211,102,.28);
+  box-shadow: 0 6px 28px rgba(37, 211, 102, .28);
   transition: var(--ease);
 }
 
 .wa-btn-f:hover {
   transform: scale(1.1);
-  box-shadow: 0 10px 36px rgba(37,211,102,.4);
+  box-shadow: 0 10px 36px rgba(37, 211, 102, .4);
 }
 
 .wa-btn-f svg {
@@ -1062,11 +954,7 @@ footer {
   fill: white;
 }
 
-
-/* ============================================================
-   17. HERO INTERIOR (páginas internas: servicios, gift cards, etc.)
-   ============================================================ */
-
+/* PAGE HERO (inner) */
 .pg-hero {
   height: 54vh;
   position: relative;
@@ -1097,16 +985,12 @@ footer {
   z-index: 2;
 }
 
-
-/* ============================================================
-   18. PÁGINA SERVICIOS (listado completo)
-   ============================================================ */
-
+/* SERVICES PAGE */
 .fs-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 3px;
-  background: rgba(201,169,110,.08);
+  background: rgba(201, 169, 110, .08);
 }
 
 .fs-item {
@@ -1127,7 +1011,7 @@ footer {
   font-family: var(--fd);
   font-size: 96px;
   font-weight: 300;
-  color: rgba(201,169,110,.13);
+  color: rgba(201, 169, 110, .13);
   line-height: 1;
   margin-bottom: -22px;
 }
@@ -1141,7 +1025,7 @@ footer {
 
 .fs-desc {
   font-size: 24px;
-  color: rgba(253,254,255,.58);
+  color: rgba(253, 254, 255, .58);
   line-height: 1.7;
   margin-bottom: 26px;
 }
@@ -1160,11 +1044,7 @@ footer {
   filter: brightness(.68) saturate(.75);
 }
 
-
-/* ============================================================
-   19. GIFT CARDS (página)
-   ============================================================ */
-
+/* GIFT CARDS */
 .gc-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1173,8 +1053,8 @@ footer {
 }
 
 .gc-card {
-  background: rgba(26,31,46,.45);
-  border: 1px solid rgba(201,169,110,.18);
+  background: rgba(26, 31, 46, .45);
+  border: 1px solid rgba(201, 169, 110, .18);
   padding: 56px 44px;
   transition: var(--ease);
   cursor: pointer;
@@ -1182,7 +1062,6 @@ footer {
   overflow: hidden;
 }
 
-/* Línea dorada superior al hacer hover */
 .gc-card::before {
   content: '';
   position: absolute;
@@ -1200,7 +1079,7 @@ footer {
 }
 
 .gc-card:hover {
-  border-color: rgba(201,169,110,.45);
+  border-color: rgba(201, 169, 110, .45);
   transform: translateY(-4px);
 }
 
@@ -1222,7 +1101,7 @@ footer {
 
 .gc-desc {
   font-size: 22px;
-  color: rgba(253,254,255,.58);
+  color: rgba(253, 254, 255, .58);
   line-height: 1.7;
   margin-bottom: 36px;
 }
@@ -1250,7 +1129,7 @@ footer {
   letter-spacing: 3px;
   text-transform: uppercase;
   text-align: center;
-  border: 1px solid rgba(201,169,110,.35);
+  border: 1px solid rgba(201, 169, 110, .35);
   color: var(--gold);
   background: transparent;
   cursor: pointer;
@@ -1262,10 +1141,9 @@ footer {
   color: var(--dark-deep);
 }
 
-/* Card destacada */
 .gc-highlight {
-  border-color: rgba(201,169,110,.5);
-  background: rgba(201,169,110,.07);
+  border-color: rgba(201, 169, 110, .5);
+  background: rgba(201, 169, 110, .07);
 }
 
 .gc-highlight .gc-gbtn {
@@ -1274,16 +1152,12 @@ footer {
   border-color: var(--gold);
 }
 
-
-/* ============================================================
-   20. MODAL GIFT CARD
-   ============================================================ */
-
+/* MODAL */
 .g-modal {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,.82);
+  background: rgba(0, 0, 0, .82);
   z-index: 2000;
   align-items: center;
   justify-content: center;
@@ -1295,7 +1169,7 @@ footer {
 
 .g-modal-box {
   background: var(--dark);
-  border: 1px solid rgba(201,169,110,.28);
+  border: 1px solid rgba(201, 169, 110, .28);
   padding: 60px;
   max-width: 520px;
   width: 92%;
@@ -1314,11 +1188,7 @@ footer {
   cursor: pointer;
 }
 
-
-/* ============================================================
-   21. RESERVAS (formulario)
-   ============================================================ */
-
+/* BOOKING */
 .bk-wrap {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1381,7 +1251,7 @@ footer {
   overflow-y: auto;
 }
 
-/* Campos del formulario */
+/* FORM */
 .fg {
   margin-bottom: 30px;
 }
@@ -1399,9 +1269,9 @@ footer {
 .f-sel,
 .f-ta {
   width: 100%;
-  background: rgba(253,254,255,.035);
+  background: rgba(253, 254, 255, .035);
   border: none;
-  border-bottom: 1px solid rgba(253,254,255,.14);
+  border-bottom: 1px solid rgba(253, 254, 255, .14);
   padding: 16px 0;
   color: var(--white);
   font-family: var(--fb);
@@ -1437,11 +1307,7 @@ footer {
   gap: 24px;
 }
 
-
-/* ============================================================
-   22. CONTACTO
-   ============================================================ */
-
+/* CONTACT */
 .ct-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1462,11 +1328,7 @@ footer {
   padding: 108px 88px;
 }
 
-
-/* ============================================================
-   23. STRIPE CTA (banda de llamada a la acción)
-   ============================================================ */
-
+/* STRIPE */
 .stripe-cta {
   background: var(--brown);
   padding: 68px 64px;
@@ -1485,15 +1347,11 @@ footer {
 
 .stripe-cta p {
   font-size: 24px;
-  color: rgba(253,254,255,.58);
+  color: rgba(253, 254, 255, .58);
   margin-top: 8px;
 }
 
-
-/* ============================================================
-   24. ANIMACIONES DE ENTRADA (scroll reveal)
-   ============================================================ */
-
+/* ANIM */
 .anim-el {
   opacity: 0;
   transform: translateY(28px);
@@ -1505,111 +1363,92 @@ footer {
   transform: none;
 }
 
+/* RESPONSIVE */
+@media(max-width:1100px) {
+  .sv-grid {
+    grid-template-columns: 1fr
+  }
 
-/* ============================================================
-   25. RESPONSIVE — TABLET (≤1100px)
-   ============================================================ */
+  .sv-card {
+    height: 400px
+  }
 
-@media (max-width: 1100px) {
+  .about {
+    grid-template-columns: 1fr
+  }
 
-  /* Grillas que pasan a una sola columna */
-  .sv-grid       { grid-template-columns: 1fr; }
-  .sv-card       { height: 400px; }
-  .about         { grid-template-columns: 1fr; }
-  .about-img     { min-height: 400px; }
-  .fs-grid       { grid-template-columns: 1fr; }
-  .gc-grid       { grid-template-columns: 1fr; }
-  .bk-wrap       { grid-template-columns: 1fr; }
-  .bk-img        { height: 380px; }
-  .ct-grid       { grid-template-columns: 1fr; }
+  .about-img {
+    min-height: 400px
+  }
+
+  .fs-grid {
+    grid-template-columns: 1fr
+  }
+
+  .gc-grid {
+    grid-template-columns: 1fr
+  }
+
+  .bk-wrap {
+    grid-template-columns: 1fr
+  }
+
+  .bk-img {
+    height: 380px
+  }
+
+  .ct-grid {
+    grid-template-columns: 1fr
+  }
 
   .ft-grid {
     grid-template-columns: 1fr 1fr;
-    gap: 44px;
+    gap: 44px
   }
 }
 
+@media(max-width:768px) {
+  nav {
+    padding: 20px 24px
+  }
 
-/* ============================================================
-   26. RESPONSIVE — MOBILE (≤768px)
-   ============================================================ */
+  nav.scrolled {
+    padding: 16px 24px
+  }
 
-@media (max-width: 768px) {
-
-  /* --- NAV --- */
-  nav         { padding: 20px 24px; }
-  nav.scrolled { padding: 16px 24px; }
   .nav-links,
-  .nav-btn    { display: none; }
-  .hamburger  { display: flex; }
+  .nav-btn {
+    display: none
+  }
 
-  /* --- HERO: estructura --- */
-  /* En mobile, el hero pasa a 1 columna y la imagen queda
-     en posición absolute cubriendo todo el fondo */
+  .hamburger {
+    display: flex
+  }
+
+  .ticker {
+    margin-top: 0;
+    position: relative;
+    z-index: 1;
+  }
+
   .hero {
-    grid-template-columns: 1fr;
-    height: 100vh;
-    max-height: 100vh;
-    overflow: hidden;
+    grid-template-columns: 1fr
   }
 
-  .hero-r {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  .hero-h1 {
+    font-size: clamp(52px, 13vw, 72px);
+    letter-spacing: -1px;
+    margin-bottom: 24px;
   }
 
-  /* --- HERO: imagen --- */
-  /* ↓ Cambiá brightness para aclarar/oscurecer la foto en mobile ↓ */
-  .hero-slide img {
-    filter: brightness(0.60) saturate(0.8);
-  }
-
-  /* --- HERO: gradiente sobre la imagen --- */
-  /* Oscurece arriba (nav) y abajo (botones), aclara al centro para ver la foto */
-  /* ↓ Ajustá las opacidades para más/menos efecto ↓ */
-  .hero-r::after {
-    background: linear-gradient(
-      to bottom,
-      rgba(26,31,46,0.72) 0%,    /* oscuro arriba → nav legible */
-      rgba(26,31,46,0.20) 45%,   /* claro al centro → foto visible */
-      rgba(26,31,46,0.70) 100%   /* oscuro abajo → botones legibles */
-    );
-  }
-
-  /* --- HERO: contenido de texto --- */
-  /* justify-content: flex-start para que todo empiece desde arriba
-     y los botones no queden cortados abajo */
-  .hero-l {
-    padding: 90px 28px 60px;
-    justify-content: flex-start;
-    text-shadow: 0 2px 16px rgba(0,0,0,0.55); /* sombra para legibilidad */
-  }
-
-  /* --- HERO: tipografía --- */
   .hero-lbl {
     font-size: 13px;
     letter-spacing: 4px;
     margin-bottom: 20px;
   }
 
-  .hero-h1 {
-    font-size: clamp(48px, 12vw, 68px);
-    letter-spacing: -1px;
-    margin-bottom: 20px;
-  }
 
-  /* ↓ Para subir la opacidad del párrafo, cambiá 0.92 ↓ */
-  .hero-p {
-    font-size: 17px;
-    line-height: 1.7;
-    margin-bottom: 32px;
-    color: rgba(255,255,255,0.92);
-  }
 
-  /* --- HERO: botones CTA --- */
   .hero-acts {
     flex-direction: column;
     gap: 12px;
@@ -1624,40 +1463,125 @@ footer {
     box-sizing: border-box;
   }
 
-  /* --- HERO: indicadores --- */
-  .hero-scroll { left: 24px; bottom: 36px; }
-  .hero-dots   { right: 24px; bottom: 44px; }
-
-  /* --- TICKER --- */
-  /* Asegurar que el ticker NO se superponga con el hero */
-  .ticker {
-    position: relative;
-    z-index: 1;
+  .hero-r::after {
+    background: rgba(26, 31, 46, 0.25) !important;
   }
 
-  /* --- SECCIONES GENERALES --- */
-  .sv-section  { padding: 80px 24px 0; }
-  .sv-head     { flex-direction: column; align-items: flex-start; gap: 24px; }
-  .sv-grid     { grid-template-columns: 1fr; gap: 24px; }
+  .hero-slide img {
+    filter: brightness(0.72) saturate(0.8);
+  }
 
-  .about       { grid-template-columns: 1fr; }
-  .about-img   { min-height: 400px; }
-  .about-body  { padding: 64px 28px; }
-  .about-stats { grid-template-columns: 1fr; gap: 40px; }
+  .hero-r {
+    position: absolute;
+    width: 100%;
+    height: 100%
+  }
+
+  .hero-r::after {
+    background: linear-gradient(to top, var(--dark-deep) 22%, rgba(26, 31, 46, .55) 62%, transparent 100%)
+  }
+
+  .hero-l {
+    padding: 90px 28px 60px;
+    justify-content: flex-start;
+    background: transparent;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+  }
+
+  .hero-p {
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 36px;
+    color: rgba(255, 255, 255, 0.92) !important;
+  }
+
+  .sv-section {
+    padding: 80px 24px 0
+  }
+
+  .sv-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px
+  }
+
+  .sv-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .about-body {
+    padding: 64px 28px
+  }
+
+  .about {
+    grid-template-columns: 1fr;
+  }
+
+  .about-img {
+    min-height: 400px;
+  }
+
+  .about-stats {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .bk-form {
+    padding: 60px 28px
+  }
+
+  .pg-hero {
+    padding: 0 28px 52px
+  }
 
   .fs-grid,
-  .gc-grid     { grid-template-columns: 1fr; gap: 24px; }
-  .fs-item     { grid-template-columns: 1fr; padding: 52px 28px; }
-  .fs-img      { display: none; }
+  .gc-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
 
-  .bk-form     { padding: 60px 28px; }
-  .pg-hero     { padding: 0 28px 52px; }
-  .ct-info     { padding: 64px 28px; }
-  .stripe-cta  { padding: 52px 28px; }
+  .ft-grid {
+    grid-template-columns: 1fr;
+    gap: 36px
+  }
 
-  .ft-grid     { grid-template-columns: 1fr; gap: 36px; }
-  footer       { padding: 64px 24px 32px; }
+  .nl-form {
+    flex-direction: column
+  }
 
-  .nl-form     { flex-direction: column; }
-  .nl-input    { border-right: 1px solid rgba(201,169,110,.2); }
+  .nl-input {
+    border-right: 1px solid rgba(201, 169, 110, .2)
+  }
+
+  footer {
+    padding: 64px 24px 32px
+  }
+
+  .stripe-cta {
+    padding: 52px 28px
+  }
+
+  .fs-item {
+    grid-template-columns: 1fr;
+    padding: 52px 28px
+  }
+
+  .fs-img {
+    display: none
+  }
+
+  .ct-info {
+    padding: 64px 28px
+  }
+
+  .hero-scroll {
+    left: 24px;
+    bottom: 36px
+  }
+
+  .hero-dots {
+    right: 24px;
+    bottom: 44px
+  }
 }
