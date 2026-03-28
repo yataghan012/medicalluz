@@ -1730,6 +1730,10 @@ footer {
     z-index: 1;
   }
 
+  .ticker-inner {
+    animation-duration: 10s;
+  }
+
   /* --- SECCIONES GENERALES --- */
   .sv-section {
     padding: 80px 24px 0;
