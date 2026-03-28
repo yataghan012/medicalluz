@@ -1429,6 +1429,41 @@ footer {
     grid-template-columns: 1fr
   }
 
+  .hero-h1 {
+    font-size: clamp(52px, 13vw, 72px);
+    letter-spacing: -1px;
+    margin-bottom: 24px;
+  }
+
+  .hero-lbl {
+    font-size: 13px;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+  }
+
+
+
+  .hero-acts {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hero-acts .btn-p,
+  .hero-acts .btn-g {
+    font-size: 13px;
+    padding: 16px 28px;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .hero-r::after {
+    background: linear-gradient(to top,
+        var(--dark-deep) 0%,
+        rgba(26, 31, 46, 0.88) 50%,
+        rgba(26, 31, 46, 0.55) 100%);
+  }
+
   .hero-r {
     position: absolute;
     width: 100%;
@@ -1440,13 +1475,15 @@ footer {
   }
 
   .hero-l {
-    padding: 110px 28px 100px;
+    padding: 90px 28px 60px;
+    justify-content: flex-start;
   }
 
   .hero-p {
-    color: rgba(253, 254, 255, 0.82);
-    font-size: 19px;
-    line-height: 1.65;
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 36px;
+    color: rgba(253, 254, 255, 0.9);
   }
 
   .sv-section {
