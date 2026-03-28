@@ -620,7 +620,6 @@ nav.scrolled {
   display: flex;
   gap: 0;
   white-space: nowrap;
-  animation: tick 18s linear infinite;
 }
 
 .ticker-item {
@@ -636,16 +635,6 @@ nav.scrolled {
   color: var(--gold);
   opacity: .6;
   align-self: center;
-}
-
-@keyframes tick {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(-50%);
-  }
 }
 
 
@@ -1566,7 +1555,7 @@ footer {
   }
 
   .sv-card {
-    height: 400px;
+    height: 380px;
   }
 
   .about {
@@ -1730,13 +1719,10 @@ footer {
     z-index: 1;
   }
 
-  .ticker-inner {
-    animation-duration: 10s;
-  }
-
   /* --- SECCIONES GENERALES --- */
   .sv-section {
     padding: 80px 24px 0;
+    padding-bottom: 60px;
   }
 
   .sv-head {
@@ -1748,6 +1734,11 @@ footer {
   .sv-grid {
     grid-template-columns: 1fr;
     gap: 24px;
+  }
+
+  .anim-el {
+    opacity: 1;
+    transform: none;
   }
 
   .about {
