@@ -20,6 +20,12 @@
   box-sizing: border-box;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -1499,8 +1505,26 @@ footer {
     gap: 24px
   }
 
+  .sv-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
   .about-body {
     padding: 64px 28px
+  }
+
+  .about {
+    grid-template-columns: 1fr;
+  }
+
+  .about-img {
+    min-height: 400px;
+  }
+
+  .about-stats {
+    grid-template-columns: 1fr;
+    gap: 40px;
   }
 
   .bk-form {
@@ -1509,6 +1533,12 @@ footer {
 
   .pg-hero {
     padding: 0 28px 52px
+  }
+
+  .fs-grid,
+  .gc-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
   }
 
   .ft-grid {
