@@ -360,7 +360,7 @@ nav.scrolled {
   position: absolute;
   inset: 0;
   z-index: 2;
-  background: linear-gradient(to right, var(--dark-deep) 0%, rgba(26, 31, 46, .28) 52%, transparent 100%);
+  background: linear-gradient(to top, var(--dark-deep) 30%, rgba(26, 31, 46, .75) 65%, rgba(26, 31, 46, .45) 100%);
 }
 
 .hero-slides {
@@ -1419,6 +1419,12 @@ footer {
     display: flex
   }
 
+  .ticker {
+    margin-top: 0;
+    position: relative;
+    z-index: 1;
+  }
+
   .hero {
     grid-template-columns: 1fr
   }
@@ -1434,7 +1440,13 @@ footer {
   }
 
   .hero-l {
-    padding: 0 28px 130px
+    padding: 110px 28px 100px;
+  }
+
+  .hero-p {
+    color: rgba(253, 254, 255, 0.82);
+    font-size: 19px;
+    line-height: 1.65;
   }
 
   .sv-section {
