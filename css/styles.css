@@ -1684,7 +1684,7 @@ footer {
   }
 
   .hero-h1 {
-    font-size: clamp(58px, 15vw, 82px);
+    font-size: clamp(73px, 15vw, 100px);
     letter-spacing: -1px;
     margin-bottom: 20px;
   }
