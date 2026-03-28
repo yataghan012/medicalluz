@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medical Luz · Spa & Wellness · Córdoba</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=Jost:wght@200;300;400;500&family=Cinzel:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <div class="mob-nav" id="mobNav">
+    <button class="mob-close" onclick="closeMob()">✕</button>
+    <a onclick="nav('inicio');closeMob()">Inicio</a>
+    <a onclick="nav('servicios');closeMob()">Servicios</a>
+    <a onclick="nav('gift-cards');closeMob()">Gift Cards</a>
+    <a onclick="nav('reservas');closeMob()">Reservas</a>
+    <a onclick="nav('contacto');closeMob()">Contacto</a>
+  </div>
+
+  <nav id="mainNav">
+    <div class="nav-logo" onclick="nav('inicio')">
+      <span class="nl-name">MEDICAL LUZ</span>
+      <span class="nl-sub">Spa &amp; Wellness · Córdoba</span>
+    </div>
+    <ul class="nav-links">
+      <li><a id="nl-inicio" onclick="nav('inicio')" class="active">Inicio</a></li>
+      <li><a id="nl-servicios" onclick="nav('servicios')">Servicios</a></li>
+      <li><a id="nl-gift-cards" onclick="nav('gift-cards')">Gift Cards</a></li>
+      <li><a id="nl-reservas" onclick="nav('reservas')">Reservas</a></li>
+      <li><a id="nl-contacto" onclick="nav('contacto')">Contacto</a></li>
+    </ul>
+    <button class="nav-btn" onclick="nav('reservas')">Reservar Turno</button>
+    <div class="hamburger" onclick="openMob()"><span></span><span></span><span></span></div>
+  </nav>
+
+  <!-- INICIO -->
+  <div class="page active" id="page-inicio">
+    <section class="hero">
+      <div class="hero-l">
+        <span class="hero-lbl">· Urca / Cerro · Córdoba, Argentina ·</span>
+        <h1 class="hero-h1">Donde<br>la <em>luz</em><br>transforma</h1>
+        <p class="hero-p">Rituales de bienestar médico y estético para quienes entienden que el cuidado verdadero no
+          admite concesiones.</p>
+        <div class="hero-acts">
+          <button class="btn-p" onclick="nav('reservas')">Reservar Experiencia</button>
+          <button class="btn-g" onclick="nav('servicios')">Explorar Servicios</button>
+        </div>
+      </div>
+      <div class="hero-r">
+        <div class="hero-slides" id="heroSlides">
+          <div class="hero-slide active">
+            <img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?auto=format&fit=crop&w=1400&q=80"
+              alt="Spa ritual">
+          </div>
+          <div class="hero-slide">
+            <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1400&q=80"
+              alt="Wellness">
+          </div>
+          <div class="hero-slide">
+            <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1400&q=80"
+              alt="Masaje">
+          </div>
+          <div class="hero-slide">
+            <img src="https://images.unsplash.com/photo-1561049501-e1f96bdd98fd?auto=format&fit=crop&w=1400&q=80"
+              alt="Candles">
+          </div>
+          <div class="hero-slide">
+            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=1400&q=80"
+              alt="Hidroterapia">
+          </div>
+        </div>
+        <div class="hero-dots" id="heroDots"></div>
+      </div>
+    </section>
+
+    <div class="ticker">
+      <div class="ticker-inner">
+        <span class="ticker-item">Masajes Terapéuticos</span><span class="ticker-dot">◆</span>
+        <span class="ticker-item">Tratamientos Faciales</span><span class="ticker-dot">◆</span>
+        <span class="ticker-item">Hidroterapia</span><span class="ticker-dot">◆</span>
+        <span class="ticker-item">Medicina Estética</span><span class="ticker-dot">◆</span>
+        <span class="ticker-item">Rituales de Bienestar</span><span class="ticker-dot">◆</span>
+        <span class="ticker-item">Gift Cards</span><span class="ticker-dot">◆</span>
+        <span class="ticker-item">Membresías Exclusivas</span><span class="ticker-dot">◆</span>
+        <span class="ticker-item">Masajes Terapéuticos</span><span class="ticker-dot">◆</span>
+        <span class="ticker-item">Tratamientos Faciales</span><span class="ticker-dot">◆</span>
+        <span class="ticker-item">Hidroterapia</span><span class="ticker-dot">◆</span>
+        <span class="ticker-item">Medicina Estética</span><span class="ticker-dot">◆</span>
+        <span class="ticker-item">Rituales de Bienestar</span><span class="ticker-dot">◆</span>
+        <span class="ticker-item">Gift Cards</span><span class="ticker-dot">◆</span>
+        <span class="ticker-item">Membresías Exclusivas</span><span class="ticker-dot">◆</span>
+      </div>
+    </div>
+
+    <section class="sv-section">
+      <div class="sv-head">
+        <div>
+          <span class="s-label">Nuestros Servicios</span>
+          <h2 class="s-title">Rituales <em>curados</em><br>para cada necesidad</h2>
+        </div>
+        <button class="btn-g" onclick="nav('servicios')">Ver todos →</button>
+      </div>
+      <div class="sv-grid">
+        <div class="sv-card anim-el">
+          <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=900&q=80"
+            alt="">
+          <div class="sv-card-c">
+            <div class="sv-num">01</div>
+            <h3 class="sv-name">Masajes &amp; Cuerpo</h3>
+            <p class="sv-desc">Desde descontracturantes hasta rituales con aceites botánicos. Cada sesión es un
+              protocolo personalizado.</p>
+            <div class="sv-arr">Reservar →</div>
+          </div>
+        </div>
+        <div class="sv-card anim-el" style="transition-delay:.1s">
+          <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=900&q=80"
+            alt="">
+          <div class="sv-card-c">
+            <div class="sv-num">02</div>
+            <h3 class="sv-name">Tratamientos Faciales</h3>
+            <p class="sv-desc">Tecnología de última generación con activos premium. Resultados visibles desde la primera
+              sesión.</p>
+            <div class="sv-arr">Reservar →</div>
+          </div>
+        </div>
+        <div class="sv-card anim-el" style="transition-delay:.2s">
+          <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=900&q=80" alt="">
+          <div class="sv-card-c">
+            <div class="sv-num">03</div>
+            <h3 class="sv-name">Wellness Integral</h3>
+            <p class="sv-desc">Sauna, hidroterapia y programas de bienestar para restablecer el equilibrio cuerpo-mente.
+            </p>
+            <div class="sv-arr">Reservar →</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="about">
+      <div class="about-img">
+        <img src="https://images.unsplash.com/photo-1610015999640-1e4aad6dcef8?auto=format&fit=crop&w=900&q=80" alt="">
+        <div class="about-badge">+ de 10 años<br><em>de experiencia</em></div>
+      </div>
+      <div class="about-body">
+        <span class="s-label">Nosotras</span>
+        <h2 class="s-title" style="font-size:clamp(44px,4.5vw,72px);">El bienestar<br>como <em>ciencia<br>y arte</em>
+        </h2>
+        <p>En Medical Luz entendemos que el cuidado profundo requiere tanto rigor médico como sensibilidad estética. Por
+          eso integramos protocolos validados con rituales de lujo en un espacio diseñado para que el tiempo se detenga.
+        </p>
+        <p>Ubicadas en el corazón de Urca-Cerro, Córdoba, atendemos a quienes no negocian con su bienestar.</p>
+        <div class="about-stats">
+          <div>
+            <div class="st-n">10+</div>
+            <div class="st-l">Años de trayectoria</div>
+          </div>
+          <div>
+            <div class="st-n">30+</div>
+            <div class="st-l">Tratamientos</div>
+          </div>
+          <div>
+            <div class="st-n">4k+</div>
+            <div class="st-l">Clientes felices</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="gt-sec">
+      <span class="s-label" style="text-align:center;">El Regalo Perfecto</span>
+      <h2 class="s-title" style="text-align:center;margin-bottom:16px;">Gift Cards <em>Medical Luz</em></h2>
+      <p class="gt-sub">Regala bienestar. La forma más elegante de decirle a alguien que merece lo mejor.</p>
+      <button class="btn-p" onclick="nav('gift-cards')">Ver Gift Cards</button>
+    </section>
+
+    <section class="nl-sec">
+      <span class="s-label" style="text-align:center;">Newsletter Exclusivo</span>
+      <h2 class="nl-title">Promociones <em>sólo</em><br>para miembros</h2>
+      <p class="nl-sub2">Rituales de temporada · Descuentos especiales · Novedades antes que nadie</p>
+      <form class="nl-form" onsubmit="nlSubmit(event)">
+        <input type="email" class="nl-input" placeholder="Tu email" required>
+        <button type="submit" class="nl-sbtn">Suscribirme</button>
+      </form>
+      <p id="nl-ok" style="display:none;margin-top:20px;font-size:21px;color:var(--gold);letter-spacing:2px;">✓
+        Bienvenida a la comunidad Medical Luz</p>
+    </section>
+  </div>
+
+  <!-- SERVICIOS -->
+  <div class="page" id="page-servicios">
+    <div class="pg-hero" style="padding-top:80px;">
+      <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1600&q=80" alt="">
+      <div class="pg-hero-c">
+        <span class="s-label">Catálogo Completo</span>
+        <h1 style="font-family:var(--fd);font-size:clamp(58px,7.5vw,110px);font-weight:300;line-height:.95;">
+          Nuestros<br><em style="color:var(--gold);">Rituales</em></h1>
+      </div>
+    </div>
+    <div class="fs-grid">
+      <div class="fs-item anim-el">
+        <div>
+          <div class="fs-num">01</div>
+          <h3 class="fs-name">Masaje Descontracturante</h3>
+          <p class="fs-desc">Técnica profunda orientada a la liberación de contracturas musculares. Aceites botánicos de
+            primera calidad, presión adaptada a cada persona.</p><span class="fs-dur">60 / 90 min · Desde
+            $18.000</span><br><button class="btn-g" style="margin-top:26px;padding:14px 32px;"
+            onclick="nav('reservas')">Reservar</button>
+        </div>
+        <img class="fs-img"
+          src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=400&q=80" alt="">
+      </div>
+      <div class="fs-item anim-el">
+        <div>
+          <div class="fs-num">02</div>
+          <h3 class="fs-name">Masaje con Piedras Calientes</h3>
+          <p class="fs-desc">Piedras de basalto volcánico combinadas con masoterapia para disolver tensiones profundas.
+            Una experiencia sensorial única.</p><span class="fs-dur">75 min · Desde $22.000</span><br><button
+            class="btn-g" style="margin-top:26px;padding:14px 32px;" onclick="nav('reservas')">Reservar</button>
+        </div>
+        <img class="fs-img"
+          src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?auto=format&fit=crop&w=400&q=80" alt="">
+      </div>
+      <div class="fs-item anim-el">
+        <div>
+          <div class="fs-num">03</div>
+          <h3 class="fs-name">Facial Premium</h3>
+          <p class="fs-desc">Limpieza profunda, hidratación ultrasónica y activos reafirmantes. Protocolo para piel
+            viva, luminosa y saludable.</p><span class="fs-dur">60 min · Desde $20.000</span><br><button class="btn-g"
+            style="margin-top:26px;padding:14px 32px;" onclick="nav('reservas')">Reservar</button>
+        </div>
+        <img class="fs-img"
+          src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=400&q=80" alt="">
+      </div>
+      <div class="fs-item anim-el">
+        <div>
+          <div class="fs-num">04</div>
+          <h3 class="fs-name">Ritual de Bienestar Completo</h3>
+          <p class="fs-desc">La experiencia total: circuito de hidroterapia + masaje + facial. Para quienes merecen el
+            tiempo que no se dan.</p><span class="fs-dur">3 horas · Desde $45.000</span><br><button class="btn-g"
+            style="margin-top:26px;padding:14px 32px;" onclick="nav('reservas')">Reservar</button>
+        </div>
+        <img class="fs-img"
+          src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=400&q=80" alt="">
+      </div>
+      <div class="fs-item anim-el">
+        <div>
+          <div class="fs-num">05</div>
+          <h3 class="fs-name">Medicina Estética</h3>
+          <p class="fs-desc">Tratamientos no invasivos con tecnología médica: radiofrecuencia, ultracavitación y más.
+            Resultados reales, sin cirugía.</p><span class="fs-dur">45 – 60 min · Desde $28.000</span><br><button
+            class="btn-g" style="margin-top:26px;padding:14px 32px;" onclick="nav('reservas')">Reservar</button>
+        </div>
+        <img class="fs-img"
+          src="https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&w=400&q=80" alt="">
+      </div>
+      <div class="fs-item anim-el">
+        <div>
+          <div class="fs-num">06</div>
+          <h3 class="fs-name">Circuito Spa &amp; Hidroterapia</h3>
+          <p class="fs-desc">Jacuzzi, sauna seco, sala de vapor y ducha escocesa. Un circuito completo de termoterapia
+            para desintoxicar cuerpo y mente.</p><span class="fs-dur">90 min · Desde $15.000</span><br><button
+            class="btn-g" style="margin-top:26px;padding:14px 32px;" onclick="nav('reservas')">Reservar</button>
+        </div>
+        <img class="fs-img"
+          src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=400&q=80" alt="">
+      </div>
+    </div>
+    <div class="stripe-cta">
+      <div>
+        <h3>¿No sabés por dónde empezar?</h3>
+        <p>Contactanos y te asesoramos sin costo ni compromiso.</p>
+      </div>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;">
+        <button class="btn-p" onclick="nav('reservas')">Reservar Turno</button>
+        <a class="btn-g" href="https://wa.me/5493515000000" target="_blank">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- GIFT CARDS -->
+  <div class="page" id="page-gift-cards">
+    <div class="pg-hero" style="padding-top:80px;">
+      <img src="https://images.unsplash.com/photo-1604328698692-f76ea9498e76?auto=format&fit=crop&w=1600&q=80" alt="">
+      <div class="pg-hero-c">
+        <span class="s-label">El Regalo que no Falla</span>
+        <h1 style="font-family:var(--fd);font-size:clamp(58px,7.5vw,110px);font-weight:300;line-height:.95;">Gift
+          Cards<br><em style="color:var(--gold);">Medical Luz</em></h1>
+      </div>
+    </div>
+    <section style="background:var(--brown);padding:104px 64px;">
+      <div style="max-width:580px;margin-bottom:8px;">
+        <span class="s-label">Regala Bienestar</span>
+        <h2 class="s-title" style="font-size:clamp(44px,4.5vw,68px);">Para quienes <em>merecen</em><br>lo mejor</h2>
+        <p style="font-size:17px;color:rgba(253,254,255,.62);line-height:2.1;">Elegí la experiencia, personalizá el
+          mensaje y recibís una gift card digital lista para enviar. Válida por 6 meses desde la compra.</p>
+      </div>
+      <div class="gc-grid">
+        <div class="gc-card anim-el">
+          <div class="gc-cat">Experiencia Inicial</div>
+          <h3 class="gc-name">Ritual<br>Esencial</h3>
+          <p class="gc-desc">1 masaje descontracturante (60 min) + acceso al circuito de hidroterapia. El punto de
+            partida perfecto.</p>
+          <div class="gc-price"><sup>$</sup>28.000</div>
+          <button class="gc-gbtn" onclick="openGift('Ritual Esencial','$28.000',false)">Regalar Ahora</button>
+        </div>
+        <div class="gc-card gc-highlight anim-el" style="transition-delay:.1s">
+          <div class="gc-cat" style="color:var(--gold-light);">✦ Más Elegido</div>
+          <h3 class="gc-name">Ritual<br>Completo</h3>
+          <p class="gc-desc">Circuito Spa + masaje de 90 min + facial premium. La experiencia Medical Luz en su máxima
+            expresión.</p>
+          <div class="gc-price"><sup>$</sup>55.000</div>
+          <button class="gc-gbtn" onclick="openGift('Ritual Completo','$55.000',false)">Regalar Ahora</button>
+        </div>
+        <div class="gc-card anim-el" style="transition-delay:.2s">
+          <div class="gc-cat">Monto Libre</div>
+          <h3 class="gc-name">Gift Card<br>Personalizada</h3>
+          <p class="gc-desc">Vos elegís el monto. Quien la recibe elige la experiencia. Máxima flexibilidad, máximo
+            impacto.</p>
+          <div class="gc-price" style="font-size:30px;padding-top:12px;">A tu medida</div>
+          <button class="gc-gbtn" onclick="openGift('Gift Card Personalizada','',true)">Personalizar</button>
+        </div>
+      </div>
+    </section>
+    <div class="g-modal" id="gModal">
+      <div class="g-modal-box">
+        <button class="g-modal-close" onclick="closeGift()">✕</button>
+        <span class="s-label">Adquirir Gift Card</span>
+        <h3 id="gTitle" style="font-family:var(--fd);font-size:40px;font-weight:300;margin-bottom:32px;"></h3>
+        <div class="fg"><label class="fl-lbl">Tu Nombre</label><input type="text" class="f-in"
+            placeholder="Nombre del comprador"></div>
+        <div class="fg"><label class="fl-lbl">Email</label><input type="email" class="f-in"
+            placeholder="email@ejemplo.com"></div>
+        <div class="fg" id="gAmountFg" style="display:none"><label class="fl-lbl">Monto (ARS $)</label><input
+            type="number" class="f-in" placeholder="Ej: 35000"></div>
+        <div class="fg"><label class="fl-lbl">Mensaje Personal (opcional)</label><textarea class="f-ta"
+            placeholder="Un mensaje para quien lo recibe..."></textarea></div>
+        <button class="btn-p" style="width:100%;text-align:center;border:none;padding:20px;"
+          onclick="processGift()">Proceder al Pago →</button>
+        <p style="font-size:13px;color:var(--muted);text-align:center;margin-top:16px;letter-spacing:1px;">Pago seguro ·
+          Mercado Pago · Envío inmediato por email</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESERVAS -->
+  <div class="page" id="page-reservas">
+    <div class="bk-wrap" style="padding-top:80px;min-height:100vh;">
+      <div class="bk-img">
+        <img src="https://images.unsplash.com/photo-1529539795054-3c162aab037a?auto=format&fit=crop&w=900&q=80" alt="">
+        <div class="bk-img-txt">
+          <span class="s-label">Agenda tu Momento</span>
+          <h2>Reservá<br>tu <em>experiencia</em></h2>
+          <p>Confirmamos tu turno en menos de 2 horas. También podés escribirnos directamente por WhatsApp.</p>
+        </div>
+      </div>
+      <div class="bk-form">
+        <form onsubmit="bkSubmit(event)">
+          <div class="f-row">
+            <div class="fg"><label class="fl-lbl">Nombre</label><input type="text" class="f-in" placeholder="Tu nombre"
+                required></div>
+            <div class="fg"><label class="fl-lbl">Apellido</label><input type="text" class="f-in"
+                placeholder="Tu apellido" required></div>
+          </div>
+          <div class="f-row">
+            <div class="fg"><label class="fl-lbl">Email</label><input type="email" class="f-in"
+                placeholder="email@ejemplo.com" required></div>
+            <div class="fg"><label class="fl-lbl">Teléfono</label><input type="tel" class="f-in"
+                placeholder="+54 9 351 ..."></div>
+          </div>
+          <div class="fg">
+            <label class="fl-lbl">Servicio</label>
+            <select class="f-sel f-in">
+              <option value="">— Seleccioná un tratamiento —</option>
+              <option>Masaje Descontracturante (60 min)</option>
+              <option>Masaje Descontracturante (90 min)</option>
+              <option>Masaje con Piedras Calientes</option>
+              <option>Facial Premium</option>
+              <option>Ritual de Bienestar Completo</option>
+              <option>Medicina Estética</option>
+              <option>Circuito Spa &amp; Hidroterapia</option>
+            </select>
+          </div>
+          <div class="f-row">
+            <div class="fg"><label class="fl-lbl">Fecha Preferida</label><input type="date" class="f-in"></div>
+            <div class="fg"><label class="fl-lbl">Horario</label><select class="f-sel f-in">
+                <option>Mañana / Tarde</option>
+                <option>09:00 – 11:00</option>
+                <option>11:00 – 13:00</option>
+                <option>14:00 – 16:00</option>
+                <option>16:00 – 18:00</option>
+                <option>18:00 – 20:00</option>
+              </select></div>
+          </div>
+          <div class="fg"><label class="fl-lbl">¿Algo que debamos saber?</label><textarea class="f-ta"
+              placeholder="Alergias, lesiones, preferencias especiales..."></textarea></div>
+          <button type="submit" class="btn-p" style="width:100%;text-align:center;border:none;padding:20px;">Enviar
+            Solicitud de Reserva</button>
+          <p id="bk-ok"
+            style="display:none;margin-top:20px;font-size:21px;color:var(--gold);text-align:center;letter-spacing:2px;">
+            ✓ Solicitud recibida. Te contactamos en menos de 2 horas.</p>
+          <div style="margin-top:44px;padding-top:36px;border-top:1px solid rgba(201,169,110,.12);text-align:center;">
+            <p style="font-size:21px;color:var(--muted);letter-spacing:1.5px;margin-bottom:18px;">¿Preferís por
+              WhatsApp?</p>
+            <a href="https://wa.me/5493515000000" target="_blank"
+              style="display:inline-flex;align-items:center;gap:12px;color:var(--gold);font-family:var(--fl);font-size:13px;letter-spacing:3px;text-decoration:none;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+              </svg>
+              Escribirnos al WhatsApp
+            </a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACTO -->
+  <div class="page" id="page-contacto">
+    <section style="padding:148px 64px 60px;background:var(--dark-deep);">
+      <span class="s-label">Encontranos</span>
+      <h1 style="font-family:var(--fd);font-size:clamp(56px,8vw,104px);font-weight:300;line-height:.95;">Estamos en <em
+          style="color:var(--gold);">Córdoba</em></h1>
+    </section>
+    <div class="ct-grid">
+      <div class="ct-map"><iframe src="https://maps.google.com/maps?q=barrio+urca+cordoba+argentina&output=embed"
+          allowfullscreen loading="lazy" title="Ubicación Medical Luz"></iframe></div>
+      <div class="ct-info">
+        <div class="ft-ci"><span class="ft-cl">Dirección</span><span class="ft-cv"
+            style="font-size:19px;line-height:1.9;">Barrio Urca / Cerro<br>Córdoba, Argentina</span></div>
+        <div class="ft-ci" style="margin-top:40px;"><span class="ft-cl">WhatsApp</span><a
+            href="https://wa.me/5493515000000" target="_blank"
+            style="color:var(--gold);font-size:19px;text-decoration:none;">+54 9 351 500-0000</a></div>
+        <div class="ft-ci" style="margin-top:40px;"><span class="ft-cl">Email</span><a
+            href="mailto:info@medicalluz.com.ar"
+            style="color:var(--gold);font-size:19px;text-decoration:none;">info@medicalluz.com.ar</a></div>
+        <div class="ft-ci" style="margin-top:40px;"><span class="ft-cl">Horarios</span>
+          <div style="font-size:17px;color:rgba(253,254,255,.7);line-height:2.1;">Lunes a Viernes: 9:00 –
+            20:00<br>Sábados: 9:00 – 14:00<br>Domingos: Cerrado</div>
+        </div>
+        <div
+          style="margin-top:52px;padding-top:48px;border-top:1px solid rgba(201,169,110,.14);display:flex;gap:16px;flex-wrap:wrap;">
+          <button class="btn-p" onclick="nav('reservas')">Reservar Turno</button>
+          <a class="btn-g" href="https://wa.me/5493515000000" target="_blank">WhatsApp</a>
+        </div>
+        <div style="margin-top:48px;display:flex;gap:32px;">
+          <a href="#"
+            style="font-family:var(--fl);font-size:13px;letter-spacing:3px;color:var(--muted);text-decoration:none;transition:color .3s;"
+            onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--muted)'">Instagram</a>
+          <a href="#"
+            style="font-family:var(--fl);font-size:13px;letter-spacing:3px;color:var(--muted);text-decoration:none;transition:color .3s;"
+            onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--muted)'">Facebook</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer id="sharedFt">
+    <div class="ft-grid">
+      <div>
+        <div class="ft-bn">MEDICAL LUZ</div>
+        <div class="ft-bs">Spa &amp; Wellness · Córdoba</div>
+        <p class="ft-desc">Rituales de bienestar médico y estético en el corazón de Urca-Cerro, Córdoba. Donde la
+          ciencia y el arte se encuentran.</p>
+      </div>
+      <div>
+        <div class="ft-ct">Servicios</div>
+        <ul class="ft-links">
+          <li><a onclick="nav('servicios')">Masajes Terapéuticos</a></li>
+          <li><a onclick="nav('servicios')">Tratamientos Faciales</a></li>
+          <li><a onclick="nav('servicios')">Medicina Estética</a></li>
+          <li><a onclick="nav('servicios')">Circuito Spa</a></li>
+          <li><a onclick="nav('servicios')">Ritual Completo</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="ft-ct">Navegación</div>
+        <ul class="ft-links">
+          <li><a onclick="nav('inicio')">Inicio</a></li>
+          <li><a onclick="nav('servicios')">Servicios</a></li>
+          <li><a onclick="nav('gift-cards')">Gift Cards</a></li>
+          <li><a onclick="nav('reservas')">Reservas</a></li>
+          <li><a onclick="nav('contacto')">Contacto</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="ft-ct">Contacto</div>
+        <div class="ft-ci"><span class="ft-cl">Ubicación</span><span class="ft-cv">Urca / Cerro · Córdoba</span></div>
+        <div class="ft-ci"><span class="ft-cl">WhatsApp</span><a href="https://wa.me/5493515000000"
+            style="color:var(--gold);text-decoration:none;font-size:15px;">+54 9 351 500-0000</a></div>
+        <div class="ft-ci"><span class="ft-cl">Horarios</span><span class="ft-cv" style="font-size:14px;">Lun–Vie 9–20hs
+            · Sáb 9–14hs</span></div>
+      </div>
+    </div>
+    <div class="ft-bot">
+      <span class="ft-copy">© 2025 Medical Luz Spa &amp; Wellness · Todos los derechos reservados</span>
+      <div class="ft-soc">
+        <a href="#">Instagram</a>
+        <a href="#">Facebook</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WA FLOAT -->
+  <div class="wa-wrap">
+    <div class="wa-tip">¿Consultás por WhatsApp?</div>
+    <a class="wa-btn-f" href="https://wa.me/5493515000000" target="_blank" aria-label="WhatsApp">
+      <svg viewBox="0 0 24 24">
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+      </svg>
+    </a>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
